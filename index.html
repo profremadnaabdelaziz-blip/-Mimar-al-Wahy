@@ -1,4 +1,3 @@
-HTML
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -41,13 +40,10 @@ body{
   border-bottom: 2px solid var(--gold);
 }
 
-/* الصورة الطويلة العريضة شغل المساحة كاملة */
+/* الصورة الطويلة العريضة تظهر بالكامل دون اقتطاع السفلي */
 .top-banner-img {
-  width: 100vw;
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  max-height: 400px;
-  object-fit: cover;
   display: block;
   margin: 0;
   padding: 0;
@@ -65,7 +61,7 @@ body{
   flex-wrap: wrap;
 }
 
-/* الجهة اليمنى: العناوين بخط متوسط */
+/* الجهة اليمنى: العناوين بخط كبير */
 .right-header-block {
   flex: 1;
   min-width: 300px;
@@ -104,24 +100,24 @@ body{
   font-weight: 700;
 }
 
-/* الجهة اليسرى: العبارات المقابلة */
+/* الجهة اليسرى: منصة إسلامية وتحتها النقاط مباشرة */
 .left-header-block {
   flex: 1;
   min-width: 300px;
-  text-align: left;
+  text-align: right;
 }
 
 .platform-desc {
-  display: inline-block;
+  display: block;
   background: rgba(201, 168, 76, 0.1);
   border: 1px solid var(--gold);
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 12px 20px;
+  border-radius: 12px;
   color: #fff;
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 15px;
-  text-align: right;
+  text-align: center;
 }
 
 .features-list {
@@ -296,17 +292,14 @@ footer {
   .header-content-container {
     flex-direction: column;
   }
-  .left-header-block {
-    text-align: right;
-  }
 }
 </style>
 </head>
 <body>
 
 <header class="header">
-  <!-- الصورة الطويلة تشغل العرض كاملاً مع رمز تحديث الكاش -->
-  <img src="hero.jpg?v=2" alt="معمار الوحي - الأستاذ الباحث رمضنة عبد العزيز" class="top-banner-img">
+  <!-- الصورة الكاملة مرفوعة ومجردة من العوائق لعرض العبارات السفلية كاملة -->
+  <img src="hero.jpg?v=3" alt="معمار الوحي - الأستاذ الباحث رمضنة عبد العزيز" class="top-banner-img">
 
   <div class="header-content-container">
     <!-- جهة أقصى اليمين: العناوين الرئيسية بخط كبير -->
@@ -317,7 +310,7 @@ footer {
       <div class="author-name">الأُسْتَاذُ الْبَاحِثُ: رَمَاضْنَة عَبْدُ الْعَزِيزِ</div>
     </div>
 
-    <!-- جهة أقصى اليسار: العبارات والنقاط في المقابل -->
+    <!-- جهة أقصى اليسار: منصة إسلامية وتحتها النقاط مباشرة -->
     <div class="left-header-block">
       <div class="platform-desc">
         مَنَصَّةٌ إِسْلَامِيَّةٌ فِكْرِيَّةٌ لِتَعْزِيزِ الْيَقِينِ بِثَوَابِت الإِسْلَامِيِّ.
