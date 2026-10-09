@@ -1,760 +1,795 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مِعْمَارُ الوَحْيِ | MIMAR AL-WAHY</title>
-    <!-- استدعاء خط عربي حديث وأنيق -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --gold-strong: #D4AF37;
-            --gold-light: #F3E5AB;
-            --sky-blue: #87CEEB;
-            --soft-pink: #FFB6C1;
-            --bg-black: #0A0A0A;
-            --card-black: #121212;
-            --text-white: #FFFFFF;
-            --text-sub: #E0E0E0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مِعْمَارُ الوَحْيِ | MIMAR AL-WAHY</title>
+  
+  <!-- الخطوط والأيقونات -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Reem+Kufi:wght@500;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    :root {
+      --bg-dark: #04060a;
+      --card-bg: rgba(10, 14, 24, 0.95);
+      --gold: #C9A84C;
+      --gold-bright: #FFD700;
+      --gold-dark: #8B6914;
+      --border-gold: rgba(201, 168, 76, 0.35);
+      --txt-light: #E1E7ED;
+      --txt-dim: #9aa8b8;
+      --radius: 12px;
+      --transition: 0.3s ease-in-out;
+    }
 
-        body {
-            background-color: var(--bg-black);
-            color: var(--text-white);
-            font-family: 'Cairo', 'Amiri', sans-serif;
-            line-height: 1.8;
-        }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* 1. الترويسة العلوية والصور */
-        .top-banner-container {
-            width: 100%;
-            background-color: #000;
-            text-align: center;
-        }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--txt-light);
+      font-family: 'Scheherazade New', 'Amiri', serif;
+      line-height: 1.9;
+      min-height: 100vh;
+    }
 
-        .top-banner-img {
-            width: 100%;
-            height: auto;
-            max-height: 380px;
-            object-fit: contain; /* إظهار الصورة كاملة بدون إخفاء أي جزء */
-            display: block;
-            margin: 0 auto;
-        }
+    /* ===================================================
+       1. الهيدر الرئيسي الكامل (هوية الدرر السنية)
+    =================================================== */
+    .hero-header {
+      position: relative;
+      width: 100%;
+      padding: 45px 20px 35px;
+      background: linear-gradient(180deg, rgba(4,6,10,0.85) 0%, rgba(4,6,10,0.98) 100%),
+                  url('https://images.unsplash.com/photo-1542816417-0983cbe82752?q=80&w=1600&auto=format&fit=crop'); 
+      background-size: cover;
+      background-position: center;
+      border-bottom: 2px solid var(--gold);
+      text-align: center;
+    }
 
-        .logo-container {
-            text-align: center;
-            padding: 25px 15px;
-            background: linear-gradient(180deg, #000000 0%, var(--bg-black) 100%);
-        }
+    .dorar-style-header {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        .main-logo-img {
-            max-width: 260px;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
-            border: 2px solid var(--gold-strong);
-        }
+    .site-title-main {
+      font-family: 'Reem Kufi', sans-serif;
+      font-size: 3.2rem;
+      color: var(--gold-bright);
+      text-shadow: 0 0 20px rgba(201, 168, 76, 0.5);
+      margin-bottom: 5px;
+    }
 
-        /* 2. الهيدر والنصوص التعريفية */
-        .site-header {
-            text-align: center;
-            padding: 20px 15px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+    .site-motto {
+      font-family: 'Amiri', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
 
-        .main-title {
-            color: var(--gold-strong);
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 5px;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
-        }
+    .supervisor-info {
+      font-family: 'Amiri', serif;
+      font-size: 1.25rem;
+      color: var(--txt-light);
+      border-top: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-gold);
+      padding: 6px 30px;
+      margin: 10px 0 15px;
+      letter-spacing: 0.5px;
+    }
 
-        .sub-title {
-            color: var(--sky-blue);
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
+    .supervisor-info span {
+      color: var(--gold-bright);
+      font-weight: bold;
+    }
 
-        .slogan {
-            color: var(--soft-pink);
-            font-size: 1.2rem;
-            font-weight: 700;
-            border-bottom: 1px solid var(--gold-strong);
-            display: inline-block;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
+    .logo-container {
+      margin: 12px 0;
+    }
 
-        .author-info {
-            background-color: var(--card-black);
-            border: 1px solid var(--gold-strong);
-            padding: 12px 20px;
-            border-radius: 8px;
-            color: var(--text-white);
-            font-size: 1.1rem;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
+    .logo-box {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 25px rgba(201, 168, 76, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10, 14, 24, 0.85);
+      color: var(--gold-bright);
+      font-size: 2.3rem;
+    }
 
-        .platform-desc {
-            color: var(--text-sub);
-            font-size: 1.15rem;
-            margin: 15px 0;
-            padding: 10px;
-            border-right: 4px solid var(--sky-blue);
-            background: rgba(255, 255, 255, 0.03);
-            text-align: right;
-        }
+    .site-description {
+      font-size: 1.45rem;
+      font-family: 'Scheherazade New', serif;
+      color: #FFFFFF;
+      max-width: 850px;
+      margin: 10px auto 0;
+      text-align: center;
+      line-height: 1.8;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+    }
 
-        .features-list {
-            list-style: none;
-            text-align: right;
-            margin: 20px 0;
-        }
+    /* ===================================================
+       2. الحاوية الرئيسية والبوابات الثمانية
+    =================================================== */
+    .container {
+      max-width: 1150px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
 
-        .features-list li {
-            margin-bottom: 10px;
-            font-size: 1.05rem;
-            color: var(--text-white);
-        }
+    .gate-block {
+      margin-bottom: 50px;
+      background: rgba(10, 14, 24, 0.6);
+      border-radius: var(--radius);
+      padding: 25px;
+      border: 1px solid rgba(201, 168, 76, 0.2);
+    }
 
-        /* شريط البحث */
-        .search-section {
-            margin: 25px 0;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
+    .gate-header {
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
-        .search-input {
-            width: 70%;
-            max-width: 500px;
-            padding: 12px 20px;
-            border-radius: 25px;
-            border: 2px solid var(--gold-strong);
-            background-color: #000;
-            color: #fff;
-            font-size: 1rem;
-            outline: none;
-        }
+    .gate-title {
+      font-family: 'Reem Kufi', sans-serif;
+      font-size: 1.8rem;
+      color: var(--gold-bright);
+    }
 
-        .search-btn {
-            padding: 12px 30px;
-            border-radius: 25px;
-            border: none;
-            background: linear-gradient(45deg, var(--gold-strong), #B8860B);
-            color: #000;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-        }
+    .gate-subtitle {
+      font-size: 1.2rem;
+      color: var(--txt-dim);
+    }
 
-        /* 3. خريطة البوابات والمحاور */
-        .map-section {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: var(--card-black);
-            border: 1px solid var(--gold-strong);
-            border-radius: 12px;
-        }
+    /* شبكة المحاور المتقابلة (محوران في كل سطر) */
+    .grid-axes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
 
-        .map-title {
-            color: var(--gold-strong);
-            text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--sky-blue);
-            padding-bottom: 10px;
-        }
+    .axis-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius);
+      padding: 22px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-        .gate-group-title {
-            font-size: 1.3rem;
-            margin: 15px 0 10px 0;
-            font-weight: bold;
-        }
+    .axis-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-bright);
+      box-shadow: 0 8px 25px rgba(201, 168, 76, 0.18);
+    }
 
-        .gate-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 15px;
-            margin-bottom: 25px;
-        }
+    .axis-title {
+      font-family: 'Reem Kufi', sans-serif;
+      color: var(--gold-bright);
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed var(--border-gold);
+      padding-bottom: 5px;
+    }
 
-        .gate-item {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 10px 15px;
-            border-radius: 6px;
-            border-right: 3px solid var(--gold-strong);
-            color: var(--text-white);
-        }
+    .axis-desc {
+      font-size: 1.15rem;
+      color: var(--txt-light);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
 
-        /* 4. عرض البوابات والمحاور التفصيلية بخلفيات خفيفة متنوعة */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+    .axis-desc ul {
+      list-style-type: none;
+      padding-right: 0;
+    }
 
-        .portal-header {
-            color: var(--gold-strong);
-            font-size: 2rem;
-            margin: 40px 0 20px 0;
-            padding-bottom: 8px;
-            border-bottom: 2px dashed var(--gold-strong);
-            text-align: right;
-        }
+    .axis-desc li {
+      position: relative;
+      padding-right: 18px;
+      margin-bottom: 6px;
+    }
 
-        .portal-subtitle {
-            color: var(--sky-blue);
-            font-size: 1.2rem;
-            margin-top: -15px;
-            margin-bottom: 20px;
-        }
+    .axis-desc li::before {
+      content: "▪";
+      color: var(--gold);
+      position: absolute;
+      right: 0;
+    }
 
-        /* خلفيات خفيفة ومغايرة لكل محور */
-        .axis-card {
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
+    .content-types {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(201, 168, 76, 0.15);
+      flex-wrap: wrap;
+    }
 
-        .axis-theme-1 { background-color: rgba(135, 206, 235, 0.06); border-right: 5px solid var(--sky-blue); }
-        .axis-theme-2 { background-color: rgba(255, 182, 193, 0.06); border-right: 5px solid var(--soft-pink); }
-        .axis-theme-3 { background-color: rgba(212, 175, 55, 0.06); border-right: 5px solid var(--gold-strong); }
-        .axis-theme-4 { background-color: rgba(147, 112, 219, 0.06); border-right: 5px solid #9370DB; }
-        .axis-theme-5 { background-color: rgba(60, 179, 113, 0.06); border-right: 5px solid #3CB371; }
-        .axis-theme-6 { background-color: rgba(255, 160, 122, 0.06); border-right: 5px solid #FFA07A; }
+    .type-badge {
+      font-size: 0.95rem;
+      background: rgba(201, 168, 76, 0.1);
+      color: var(--gold);
+      padding: 3px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(201, 168, 76, 0.25);
+    }
 
-        .axis-title {
-            color: var(--gold-strong);
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-        }
+    /* ===================================================
+       3. معارج البحث الرقمي والتذييل
+    =================================================== */
+    .search-section {
+      margin: 50px 0 30px;
+      background: var(--card-bg);
+      border: 2px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+    }
 
-        .axis-points {
-            margin-right: 20px;
-            margin-bottom: 20px;
-            color: var(--text-white);
-        }
+    .search-section h2 {
+      font-family: 'Reem Kufi', sans-serif;
+      color: var(--gold-bright);
+      font-size: 1.85rem;
+      margin-bottom: 20px;
+    }
 
-        .axis-points p {
-            margin-bottom: 8px;
-            font-size: 1.05rem;
-        }
+    .search-box {
+      display: flex;
+      justify-content: center;
+      max-width: 680px;
+      margin: 0 auto;
+      gap: 12px;
+    }
 
-        /* أقسام الوسائط والملفات داخل المحور */
-        .content-types {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
+    .search-input {
+      width: 100%;
+      padding: 12px 20px;
+      font-family: 'Scheherazade New', serif;
+      font-size: 1.25rem;
+      background: rgba(4, 6, 10, 0.9);
+      border: 1px solid var(--border-gold);
+      border-radius: 8px;
+      color: #FFF;
+      outline: none;
+      transition: var(--transition);
+    }
 
-        .type-btn {
-            background-color: #000;
-            color: var(--text-white);
-            border: 1px solid var(--gold-strong);
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+    .search-input:focus {
+      border-color: var(--gold-bright);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+    }
 
-        .type-btn:hover {
-            background-color: var(--gold-strong);
-            color: #000;
-        }
+    .search-btn {
+      padding: 12px 30px;
+      font-family: 'Reem Kufi', sans-serif;
+      font-size: 1.15rem;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
 
-        /* 5. الآية والتذييل (Footer) */
-        .quran-verse {
-            text-align: center;
-            padding: 30px 20px;
-            margin: 40px auto;
-            max-width: 900px;
-            background: rgba(212, 175, 55, 0.05);
-            border: 1px solid var(--gold-strong);
-            border-radius: 12px;
-            color: var(--gold-light);
-            font-family: 'Amiri', serif;
-            font-size: 1.6rem;
-        }
+    .search-btn:hover {
+      background: var(--gold-bright);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    }
 
-        .site-footer {
-            background-color: #000;
-            border-top: 2px solid var(--gold-strong);
-            padding: 30px 20px;
-            text-align: center;
-            margin-top: 50px;
-        }
+    .footer {
+      border-top: 1px solid var(--border-gold);
+      padding: 30px 20px;
+      text-align: center;
+      background: rgba(4, 6, 10, 0.95);
+    }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
+    .footer-quran {
+      font-size: 1.3rem;
+      color: var(--gold-bright);
+      margin-bottom: 15px;
+    }
 
-        .social-links a {
-            color: var(--sky-blue);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            padding: 5px 12px;
-            border: 1px solid var(--sky-blue);
-            border-radius: 5px;
-            transition: 0.3s;
-        }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 15px 0;
+    }
 
-        .social-links a:hover {
-            background-color: var(--sky-blue);
-            color: #000;
-        }
+    .social-links a {
+      color: var(--gold);
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
 
-        .contact-info {
-            color: var(--text-sub);
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
+    .social-links a:hover {
+      color: var(--gold-bright);
+      transform: scale(1.15);
+    }
 
-        .copyright {
-            color: var(--gold-strong);
-            font-size: 0.95rem;
-        }
-    </style>
+    .contact-info {
+      font-size: 1.05rem;
+      color: var(--txt-dim);
+    }
+
+    @media (max-width: 768px) {
+      .grid-axes {
+        grid-template-columns: 1fr;
+      }
+      .site-title-main {
+        font-size: 2.3rem;
+      }
+      .search-box {
+        flex-direction: column;
+      }
+      .search-btn {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
-<meta name="google-site-verification" content="VVnIEgm7PUose4rje9JMTTEOO24HnyL7CjQWb86RQd8" />
-    <!-- 1. وضع الصورة الأولى في أعلى المنصة بالكامل دون إخفاء شيء منها -->
-    <div class="top-banner-container">
-        <img src="صورة01.jpg" alt="الأستاذ الباحث رمامضنة عبد العزيز" class="top-banner-img">
+
+  <!-- الهيدر الرئيسي -->
+  <header class="hero-header">
+    <div class="dorar-style-header">
+      <h1 class="site-title-main">مِعْمَارُ الوَحْيِ</h1>
+      <p class="site-motto">عَلَى بَصِيرَةِ العَقْلِ وَهِدَايَةِ الإسلامِ — نَحْيَا كِرَاماً</p>
+      
+      <div class="supervisor-info">
+        الأُسْتَاذُ الْبَاحِثُ: <span>رَمَاضْنَة عَبْدُ الْعَزِيزِ</span> — دِرَاسَاتٌ إِسْلَامِيَّةٌ عُلْيَا
+      </div>
+
+      <div class="logo-container">
+        <div class="logo-box">
+          <i class="fa-solid fa-mosque"></i>
+        </div>
+      </div>
+
+      <p class="site-description">
+        مَنَصَّةٌ إِسْلَامِيَّةٌ فِكْرِيَّةٌ لِتَعْزِيزِ الْيَقِينِ بِثَوَابِتِ الإِسْلَامِ.
+      </p>
     </div>
+  </header>
 
-    <!-- وضع صورة اللوغو تحتها مباشرة في المنتصف -->
-    <div class="logo-container">
-        <img src="صورة 02.jfif" alt="شعار معمار الوحي" class="main-logo-img">
-    </div>
+  <main class="container">
 
-    <!-- 2. رأس المنصة والنصوص التعريفية -->
-    <header class="site-header">
-        <h1 class="main-title">( مِعْمَارُ الوَحْيِ )</h1>
-        <div class="sub-title">MIMAR AL-WAHY</div>
-        <div class="slogan">عَلَى بَصِيرَةِ العَقْلِ وَهِدَايَةِ الإسلامِ — نَحْيَا كِرَاماً</div>
-        <br>
-        <div class="author-info">
-الأُسْتَاذُ الْبَاحِثُ: رَمَاضْنَة عَبْدُ الْعَزِيزِ — دِرَاسَاتٌ إِسْلَامِيَّةٌ عُلْيَا — أُسْتَاذٌ مُكَوِّنٌ لِلتَّعْلِيمِ الثَّانَوِيِّ.
+    <!-- البوابة الأولى -->
+    <section class="gate-block">
+      <div class="gate-header">
+        <h2 class="gate-title">🔵 البَوَّابَةُ الأُولَى: العُرْوَةُ الوُثْقَى</h2>
+        <span class="gate-subtitle">النَّصُّ وَالـمَصْدَرُ الـمَعْصُومُ</span>
+      </div>
+
+      <div class="grid-axes">
+        <div class="axis-card">
+          <h3 class="axis-title">المحور الأول: رَوَاسِخُ الإيمَانِ بِالغَيْبِيَّات</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>تأصيلٌ برهانيٌّ عِرفانيٌّ لمرتكزات اليقين وتثبيتٌ لأصول اعتقاد أهل السنة والجماعة.</li>
+              <li>مواجهةٌ علمية جريئة لتحدّيات السيولة الفكرية في زمن العصر الرقمي الصعب.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
         </div>
 
-        <div class="platform-desc">
-            مَنَصَّةٌ إِسْلَامِيَّةٌ فِكْرِيَّةٌ لِتَعْزِيزِ الْيَقِينِ بِثَوَابِت الإِسْلَامِيِّ.
+        <div class="axis-card">
+          <h3 class="axis-title">المحور الثاني: مِعْمَارُ النَّصِّ القُرْآنِيِّ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>إبحارٌ معرفيٌّ في علوم التنزيل وأوجه الإعجاز المعماري للنص القرآني الكريم.</li>
+              <li>صياغةُ حجاجٍ فكريٍّ متماسك يُبطل المطاعن النصية والتاريخية أمام قذائف التشكيك الحداثي.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
         </div>
 
-        <ul class="features-list">
-            <li>① نَقْدٌ مَنْهَجِيٌّ صَارِمٌ وَإِجَابَاتٌ عِلْمِيَّةٌ مُوَثَّقَةٌ لِلشُّبُهَاتِ الْمُثَارَةِ.</li>
-            <li>② رَوَائِعُ الْفِيدْيُوهَاتِ وَالْكُتُبِ وَالأَبْحَاثِ الْجَامِعِيَّةِ وَالْمَقَالاتِ الْفِكْرِيَّةِ.</li>
-            <li>③ رَوَابِطُ سَهْلَةٌ لِمَصَادِرِ الْمَعْرِفَةِ وَالتَّوْعِيَةِ وَالتَّثْقِيفِ الإِيجَابِيِّ.</li>
-        </ul>
-
-        <!-- شريط البحث -->
-        <div class="search-section">
-            <input type="text" class="search-input" placeholder="مَعَارِجُ الْبَحْثِ الرَّقْمِيِّ — ابحث في المحاور والمواد...">
-            <button class="search-btn">بحث</button>
+        <div class="axis-card" style="grid-column: span 2;">
+          <h3 class="axis-title">المحور الثالث: أَنْوَارُ السُّنَّةِ الـمُحَمَّدِيَّةِ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>بيانٌ لمعالم النبوة وحجية النص النبوي الشريف في الاستدلال العقدي والشرعي.</li>
+              <li>استعراضٌ لصرامة المنهج العلمي لعلماء الحديث في نقد الروايات وصيانة الميراث النبوي.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
         </div>
-    </header>
-
-    <!-- 3. خريطة البوات والمحاور -->
-    <section class="map-section">
-        <h2 class="map-title">— الـمِعْمَارُ الـمَعْرِفِيُّ لِلْمَنَصَّةِ —<br>خَرِيطَةُ الْبَوَّابَاتِ وَالْمَحَاوِرِ</h2>
-
-        <div class="gate-group-title" style="color: var(--sky-blue);">🔵 أوَّلاً — العُرْوَةُ الوُثْقَى</div>
-        <div class="gate-grid">
-            <div class="gate-item">١ — رَوَاسِخُ الإيمان بالغيبيات.</div>
-            <div class="gate-item">٢ — مِعْمَارُ النَّصِّ القرآني.</div>
-            <div class="gate-item">٣ — أَنْوَارُ السُّنَّة المحمدية.</div>
-        </div>
-
-        <div class="gate-group-title" style="color: var(--soft-pink);">🔴 ثانياً — تَهَافُتُ الفَلَاسِفَة</div>
-        <div class="gate-grid">
-            <div class="gate-item">٤ — فَضَائِحُ الملاحدة.</div>
-            <div class="gate-item">٥ — قِصَّةُ الأديان والمعتقدات.</div>
-            <div class="gate-item">٦ — الغَزْوُ الثقافي الغربي.</div>
-        </div>
-
-        <div class="gate-group-title" style="color: #9370DB;">🧠 ثالثاً — الإنسانُ يَبْحَث عن المعنى</div>
-        <div class="gate-grid">
-            <div class="gate-item">١٠ — مَقَالَاتُ أهل الإسلام.</div>
-            <div class="gate-item">١١ — حُصُونُنَا مُهَدَّدَة.</div>
-            <div class="gate-item">١٢ — هِدَايَةُ الحيارى.</div>
-        </div>
-
-        <div class="gate-group-title" style="color: #3CB371;">🛣️ رابعاً — الصِّرَاطُ الـمُسْتَقِيمُ</div>
-        <div class="gate-grid">
-            <div class="gate-item">١٧ — رُوحُ التشريع الاسلامي</div>
-            <div class="gate-item">١٨ — الـمُسْلِمُونَ الجدد.</div>
-        </div>
-
-        <div class="gate-group-title" style="color: var(--gold-strong);">📜 خامساً — رِجَالٌ وَحَضَارَاتٌ</div>
-        <div class="gate-grid">
-            <div class="gate-item">٧ — قِصَّةُ الحضارة.</div>
-            <div class="gate-item">٨ — أَمْجَادُ الإسلام.</div>
-            <div class="gate-item">٩ — صفحات من عُلَمَاءِ الأُمَّة.</div>
-        </div>
-
-        <div class="gate-group-title" style="color: #FFA07A;">⚡ سادساً — بِالإسلامِ نَحْيَا</div>
-        <div class="gate-grid">
-            <div class="gate-item">١٥ — الـمَعَالِي للجيل الصاعد.</div>
-            <div class="gate-item">١٦ — السَّلامُ لقلبك ياصاحبي.</div>
-        </div>
-
-        <div class="gate-group-title" style="color: var(--soft-pink);">🌸 سابعاً — مِعْمَارُ الأُسْرَة المسلمة</div>
-        <div class="gate-grid">
-            <div class="gate-item">١٣ — أَنْتِ ايضا صَحَابِيَّة.</div>
-            <div class="gate-item">١٤ — عِفَّةُ الرجال النبلاء.</div>
-        </div>
-
-        <div class="gate-group-title" style="color: var(--sky-blue);">📚 ثامناً — مَنَصَّةُ الـمَعْرِفَة</div>
-        <div class="gate-grid">
-            <div class="gate-item">١٩ — مَدَاخِلُ العلوم الاسلامية.</div>
-            <div class="gate-item">٢٠ — خَزَانَةُ الـمُثَقَّف المعاصر.</div>
-        </div>
+      </div>
     </section>
 
-    <!-- 4. المحتوى التفصيلي للبوابات والمحاور -->
-    <main class="container">
+    <!-- البوابة الثانية -->
+    <section class="gate-block">
+      <div class="gate-header">
+        <h2 class="gate-title">🔴 البَوَّابَةُ الثَّانِيَةُ: تَهَافُتُ الفَلَاسِفَةِ</h2>
+        <span class="gate-subtitle">الـمُوَاجَهَةُ الفِكْرِيَّةُ النَّقْدِيَّةُ</span>
+      </div>
 
-        <!-- البوابة الأولى -->
-        <h2 class="portal-header">🔵 أوَّلاً — البَوَّابَةُ الأُولَى: العُرْوَةُ الوُثْقَى.</h2>
-        <div class="portal-subtitle">النَّصُّ وَالـمَصْدَرُ الـمَعْصُومُ.</div>
-
-        <div class="axis-card axis-theme-1">
-            <h3 class="axis-title">المحور الأول: — رَوَاسِخُ الإيمَانِ بِالغَيْبِيَّات —</h3>
-            <div class="axis-points">
-                <p>① تأصيلٌ برهانيٌّ عِرفانيٌّ لمرتكزات اليقين وتثبيتٌ لأصول اعتقاد أهل السنة والجماعة.</p>
-                <p>② مواجهةٌ علمية جريئة لتحدّيات السيولة الفكرية في زمن العصر الرقمي الصعب.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
+      <div class="grid-axes">
+        <div class="axis-card">
+          <h3 class="axis-title">المحور الرابع: فَضَائِحُ الـمُلَاحِدَةِ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>تفكيكٌ عدمية الإلحاد الجديد وتناقضاته الفلسفية والعلمية (من نيتشه إلى دوكينز).</li>
+              <li>تعريةٌ علمية لتناقضات المادية والداروينية أمام براهين الغيب الفطرية والعقلية.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
         </div>
 
-        <div class="axis-card axis-theme-2">
-            <h3 class="axis-title">المحور الثاني: — مِعْمَارُ النَّصِّ القُرْآنِيِّ —</h3>
-            <div class="axis-points">
-                <p>① إبحارٌ معرفيٌّ في علوم التنزيل وأوجه الإعجاز المعماري للنص القرآني الكريم.</p>
-                <p>② صياغةُ حجاجٍ فكريٍّ متماسك يُبطل المطاعن النصية والتاريخية أمام قذائف التشكيك الحداثي.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
+        <div class="axis-card">
+          <h3 class="axis-title">المحور الخامس: قِصَّةُ الأَدْيَانِ وَالـمُعْتَقَدَاتِ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>سجالاتٌ نقدية مقارنة في مسارات العقائد السماوية والمذاهب الشرقية الوثنية.</li>
+              <li>تبيانٌ لوجوه التحريف وإشراق التوحيد الخالص في مقابل الديانات الأرضية.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
         </div>
 
-        <div class="axis-card axis-theme-3">
-            <h3 class="axis-title">المحور الثالث: — أَنْوَارُ السُّنَّةِ الـمُحَمَّدِيَّةِ —</h3>
-            <div class="axis-points">
-                <p>① بيانٌ لمعالم النبوة وحجية النص النبوي الشريف في الاستدلال العقدي والشرعي.</p>
-                <p>② استعراضٌ لصرامة المنهج العلمي لعلماء الحديث في نقد الروايات وصيانة الميراث النبوي.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
+        <div class="axis-card" style="grid-column: span 2;">
+          <h3 class="axis-title">المحور السادس: قِرَاءَاتٌ فِي الغَزْوِ الثَّقَافِيِّ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>تشريحٌ منهجي للمذاهب المعاصرة وحركة العصر الجديد وأدواتها في صناعة التبعية.</li>
+              <li>كشفٌ علمي لآليات استلاب الوعي الإنساني وتفكيك هيمنة الخطاب الغربي الثقافي.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- البوابة الثالثة -->
+    <section class="gate-block">
+      <div class="gate-header">
+        <h2 class="gate-title">🧠 البَوَّابَةُ الثَّالِثَةُ: الإنسانُ يَبْحَثُ عَنِ الـمَعْنَى</h2>
+        <span class="gate-subtitle">التَّشْرِيحُ الـمَذْهَبِيُّ وَالحَصَانَةُ</span>
+      </div>
+
+      <div class="grid-axes">
+        <div class="axis-card">
+          <h3 class="axis-title">المحور العاشر: مَقَالَاتُ أَهْلِ الإسلام</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>خارطةٌ عقدية شاملة ومقارنة ترصد نشأة الطوائف الإسلامية القديمة والحديثة.</li>
+              <li>تفريقٌ منهجي دقيق بين الأصالة السنية والتنوير المنحرف والدعوات الهدامة.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
         </div>
 
-        <!-- البوابة الثانية -->
-        <h2 class="portal-header">🔴 ثانياً — البَوَّابَةُ الثَّانِيَةُ: تَهَافُتُ الفَلَاسِفَةِ.</h2>
-        <div class="portal-subtitle">الـمُوَاجَهَةُ الفِكْرِيَّةُ النَّقْدِيَّةُ.</div>
-
-        <div class="axis-card axis-theme-2">
-            <h3 class="axis-title">المحور الرابع: — فَضَائِحُ الـمُلَاحِدَةِ —</h3>
-            <div class="axis-points">
-                <p>① تفكيكٌ عدمية الإلحاد الجديد وتناقضاته الداخلية الفلسفية والعلمية (من الفيلسوف المطرقة نيتشه .. إلى ريتشارد دوكينز).</p>
-                <p>② تعريةٌ علمية لتناقضات المادية والداروينية أمام براهين الغيب الفطرية والعقلية.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
+        <div class="axis-card">
+          <h3 class="axis-title">المحور الحادي عشر: حُصُونُنَا مُهَدَّدَةٌ مِنَ الدَّاخِلِ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>مناعةٌ فكرية واعية تكشف عوار دعاة الضلالة الداخليين (من ابن سبأ إلى عدنان إبراهيم).</li>
+              <li>حمايةٌ للصف المسلم من اختراقات أعداء الداخل بالوعي والبرهان العلمي الرصين.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
         </div>
 
-        <div class="axis-card axis-theme-4">
-            <h3 class="axis-title">المحور الخامس: — قِصَّةُ الأَدْيَانِ وَالـمُعْتَقَدَاتِ —</h3>
-            <div class="axis-points">
-                <p>① سجالاتٌ نقدية مقارنة في مسارات العقائد السماوية والمذاهب الشرقية الوثنية.</p>
-                <p>② تبيانٌ لوجوه التحريف وإشراق التوحيد الخالص في مقابل الديانات الأرضية.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
+        <div class="axis-card" style="grid-column: span 2;">
+          <h3 class="axis-title">المحور الثاني عشر: هِدَايَةُ الـحَيَارَى</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>موسوعةٌ شاملة لأغلب الإشكالات المطروحة للتشكيك في عقائد وتشريعات الإسلام.</li>
+              <li>توجيهاتٌ معرفية وحوارات فكرية لبناء المناعة العقائدية لدى الشباب الحائر.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- البوابة الرابعة -->
+    <section class="gate-block">
+      <div class="gate-header">
+        <h2 class="gate-title">🛣️ البَوَّابَةُ الرَّابِعَةُ: الصِّرَاطُ الـمُسْتَقِيمُ</h2>
+        <span class="gate-subtitle">التَّشْرِيعُ وَالـمِيلَادُ الجَدِيدُ</span>
+      </div>
+
+      <div class="grid-axes">
+        <div class="axis-card">
+          <h3 class="axis-title">المحور السابع عشر: رُوحُ التَّشْرِيعِ الإسلامِيِّ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>بيانٌ لمنظومة الأحكام ومقاصد الشريعة ومحاسن النظام الإسلامي.</li>
+              <li>ردٌّ موضوعيٌّ يدحض الشبهات الموجهة ضد العقوبات والحدود الشرعية.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
         </div>
 
-        <div class="axis-card axis-theme-6">
-            <h3 class="axis-title">المحور السادس: — قِرَاءَاتٌ فِي الغَزْوِ الثَّقَافِيِّ —</h3>
-            <div class="axis-points">
-                <p>① تشريحٌ منهجي للمذاهب المعاصرة وحركة العصر الجديد وأدواتها في صناعة التبعية.</p>
-                <p>② كشفٌ علمي لآليات استلاب الوعي الإنساني وتفكيك هيمنة الخطاب الغربي الثقافي.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
+        <div class="axis-card">
+          <h3 class="axis-title">المحور الثامن عشر: الـمُسْلِمُونَ الجُدُدُ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>وثائقياتٌ تسرد تجارب إيمانية وفلسفية لأحرارٍ عبروا من تيه المادية.</li>
+              <li>شهاداتٌ لرجال ونساء وجدوا في الإسلام السكينة والميلاد الروحي الجديد.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- البوابة الخامسة -->
+    <section class="gate-block">
+      <div class="gate-header">
+        <h2 class="gate-title">📜 البَوَّابَةُ الـخَامِسَةُ: رِجَالٌ وَحَضَارَاتٌ</h2>
+        <span class="gate-subtitle">الـعُمْرَانُ وَالتَّارِيخُ السُّنَنِيُّ</span>
+      </div>
+
+      <div class="grid-axes">
+        <div class="axis-card">
+          <h3 class="axis-title">المحور السابع: قِصَّةُ الـحَضَارَةِ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>تتبّعٌ منهجي لمسار العمران البشري والتحولات الكبرى في تاريخ الغرب والشرق.</li>
+              <li>دراسةٌ سننية من ظلمات الإقطاع الأوروبي إلى مآلات المد الاستعماري المعاصر.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
         </div>
 
-        <!-- البوابة الثالثة -->
-        <h2 class="portal-header">🧠 ثالثاً — البَوَّابَةُ الثَّالِثَةُ: الإنسانُ يَبْحَثُ عَنِ الـمَعْنَى.</h2>
-        <div class="portal-subtitle">التَّشْرِيحُ الـمَذْهَبِيُّ وَالحَصَانَةُ.</div>
-
-        <div class="axis-card axis-theme-4">
-            <h3 class="axis-title">المحور العاشر: — مَقَالَاتُ أَهْلِ الإسلام —</h3>
-            <div class="axis-points">
-                <p>① خارطةٌ عقدية شاملة ومقارنة ترصد نشأة الطوائف الإسلامية القديمة والحديثة.</p>
-                <p>② تفريقٌ منهجي دقيق بين الأصالة السنية والتنوير المنحرف والدعوات الهدامة.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
+        <div class="axis-card">
+          <h3 class="axis-title">المحور الثامن: أَمْجَادُ أَهْلِ الإسلام</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>استقراءٌ سننيٌّ لأمجاد الأمة انطلاقاً من السيرة النبوية إلى رجال البطولة.</li>
+              <li>توثيقٌ علمي لإشراقات الدول الإسلامية متعاقبة والإنجازات الحضارية الخالدة.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
         </div>
 
-        <div class="axis-card axis-theme-1">
-            <h3 class="axis-title">المحور الحادي عشر: — حُصُونُنَا مُهَدَّدَةٌ مِنَ الدَّاخِلِ —</h3>
-            <div class="axis-points">
-                <p>① مناعةٌ فكرية واعية تكشف عوار دعاة الضلالة الداخليين ومخططاتهم الهدامة (من عبدالله ابن سبأ .. إلى عدنان إبراهيم).</p>
-                <p>② حمايةٌ للصف المسلم من اختراقات أعداء الداخل بالوعي والبرهان العلمي الرصين.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
+        <div class="axis-card" style="grid-column: span 2;">
+          <h3 class="axis-title">المحور التاسع: صَفَحَاتٌ مِنْ عُلَمَاءِ الأُمَّةِ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>استحضارٌ ملهمٌ لمواقف وحياة الأعلام من جهابذة الفكر الإسلامي والشرع.</li>
+              <li>تحليلٌ منهجي للمسارات الفكرية للعلماء وإسهاماتهم الحضارية عبر التاريخ.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- البوابة السادسة -->
+    <section class="gate-block">
+      <div class="gate-header">
+        <h2 class="gate-title">⚡ البَوَّابَةُ السَّادِسَةُ: بِالإسلامِ نَحْيَا كِرَاماً</h2>
+        <span class="gate-subtitle">نَهْضَةُ الجِيلِ وَالتَّعَافِي النَّفْسَانِي</span>
+      </div>
+
+      <div class="grid-axes">
+        <div class="axis-card">
+          <h3 class="axis-title">المحور الخامس عشر: الـمَعَالِي لِلْجِيلِ الصَّاعِدِ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>سيكولوجيةٌ متكاملة للانضباط والارتقاء تصنع قوة الإرادة لدى الشباب القرآني.</li>
+              <li>منهجيةٌ تأصيلية تؤهل الجيل لقيادة الاستخلاف والنجاح الشخصي والمهني.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
         </div>
 
-        <div class="axis-card axis-theme-5">
-            <h3 class="axis-title">المحور الثاني عشر: — هِدَايَةُ الـحَيَارَى —</h3>
-            <div class="axis-points">
-                <p>① موسوعةٌ شاملة لأغلب الإشكالات المطروحة للتشكيك في عقائد وتشريعات الإسلام.</p>
-                <p>② توجيهاتٌ معرفية وحوارات فكرية لبناء المناعة العقائدية لدى الشباب الحائر.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
+        <div class="axis-card">
+          <h3 class="axis-title">المحور السادس عشر: السَّلَامُ لِقَلْبِكَ يَا صَاحِبِي</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>علاجٌ نفساني لترميم أوجاع القلق الوجودي والتعافي من الإدمان الرقمي.</li>
+              <li>جرعاتٌ شرعية للاستشفاء الروحي لتحقيق الوعي النفسي-الإيماني.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- البوابة السابعة -->
+    <section class="gate-block">
+      <div class="gate-header">
+        <h2 class="gate-title">🌸 البَوَّابَةُ السَّابِعَةُ: مِعْمَارُ الأُسْرَةِ الـمُسْلِمَةِ</h2>
+        <span class="gate-subtitle">الـمَرْأَةُ وَالتَّزْكِيَةُ الرُّوحَانِيَّةُ</span>
+      </div>
+
+      <div class="grid-axes">
+        <div class="axis-card">
+          <h3 class="axis-title">المحور الثالث عشر: أَنْتِ أَيْضاً صَحَابِيَّةٌ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>تأصيلٌ لكرامة المرأة وهويتها الحرة في ظلال الإسلام بعيداً عن التبعية الغربية.</li>
+              <li>تفكيكٌ صارم للمركزية النسوية الغربية لتأمين فطرة الأسرة المسلمة والنشء.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
         </div>
 
-        <!-- البوابة الرابعة -->
-        <h2 class="portal-header">🛣️ رابعاً — البَوَّابَةُ الرَّابِعَةُ: الصِّرَاطُ الـمُسْتَقِيمُ.</h2>
-        <div class="portal-subtitle">التَّشْرِيعُ وَالـمِيلَادُ الجَدِيدُ.</div>
+        <div class="axis-card">
+          <h3 class="axis-title">المحور الرابع عشر: عِفَّةُ الرِّجَالِ النُّبَلَاءِ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>توعية الشباب بأضرار الإباحية وطرق التعافي بأساليب طبية ونفسية متوافقة مع الشرع.</li>
+              <li>بناء الحصانة الأخلاقية وعوامل الثبات أمام الفتن الرقمية والإدمانية.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="axis-card axis-theme-5">
-            <h3 class="axis-title">المحور السابع عشر: — رُوحُ التَّشْرِيعِ الإسلامِيِّ —</h3>
-            <div class="axis-points">
-                <p>① بيانٌ لمنظومة الأحكام ومقاصد الشريعة ومحاسن النظام الإسلامي.</p>
-                <p>② ردٌّ موضوعيٌّ يدحض الشبهات الموجهة ضد العقوبات والحدود الشرعية.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
+    <!-- البوابة الثامنة -->
+    <section class="gate-block">
+      <div class="gate-header">
+        <h2 class="gate-title">📚 البَوَّابَةُ الثَّامِنَةُ: مَنَصَّةُ الـمَعْرِفَةِ</h2>
+        <span class="gate-subtitle">التَّأْصِيلُ وَالبَحْثُ الرَّقْمِيُّ</span>
+      </div>
+
+      <div class="grid-axes">
+        <div class="axis-card">
+          <h3 class="axis-title">المحور التاسع عشر: مَدَاخِلُ إِلَى العُلُومِ الإسلامِيَّةِ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>معالم تأصيلية وخرائط قراءة رصينة ترقى بالشباب في طلب العلوم الشرعية.</li>
+              <li>مسارات منهجية تخصصية لتحصيل العلوم الإسلامية على منهج أهل السنة.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
         </div>
 
-        <div class="axis-card axis-theme-3">
-            <h3 class="axis-title">المحور الثامن عشر: — الـمُسْلِمُونَ الجُدُدُ —</h3>
-            <div class="axis-points">
-                <p>① وثائقياتٌ جديدة تسرد تجارب إيمانية وفلسفية لأحرارٍ عبروا من تيه المادية.</p>
-                <p>② شهاداتٌ لرجال ونساء وجدوا في الإسلام السكينة والميلاد الروحي الجديد.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
+        <div class="axis-card">
+          <h3 class="axis-title">المحور العشرون: خَزَانَةُ الـمُثَقَّفِ الـمُعَاصِرِ</h3>
+          <div class="axis-desc">
+            <ul>
+              <li>رصد متجدد لروائع كتب الفكر الإسلامي الحديثة التي توافق حقائق الوحي الإلهي.</li>
+            </ul>
+          </div>
+          <div class="content-types">
+            <span class="type-badge">📄 مقالات وأبحاث</span>
+            <span class="type-badge">📚 كتب ورسائل جامعية</span>
+            <span class="type-badge">🎥 مرئيات</span>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <!-- البوابة الخامسة -->
-        <h2 class="portal-header">📜 خامساً — البَوَّابَةُ الـخَامِسَةُ: رِجَالٌ وَحَضَارَاتٌ.</h2>
-        <div class="portal-subtitle">الـعُمْرَانُ وَالتَّارِيخُ السُّنَنِيُّ.</div>
+    <!-- مستطيل معارج البحث الرقمي -->
+    <section class="search-section">
+      <h2>مَعَارِجُ الْبَحْثِ الرَّقْمِيِّ</h2>
+      <div class="search-box">
+        <input type="text" class="search-input" placeholder="ابحث في المحاور والمواد المعرفية...">
+        <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> بحث</button>
+      </div>
+    </section>
 
-        <div class="axis-card axis-theme-3">
-            <h3 class="axis-title">المحور السابع: — قِصَّةُ الـحَضَارَةِ —</h3>
-            <div class="axis-points">
-                <p>① تتبّعٌ منهجي لمسار العمران البشري والتحولات الكبرى في تاريخ الغرب والشرق.</p>
-                <p>② دراسةٌ سننية من ظلمات الإقطاع الأوروبي إلى مآلات المد الاستعماري المعاصر.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
-        </div>
+  </main>
 
-        <div class="axis-card axis-theme-6">
-            <h3 class="axis-title">المحور الثامن: — أَمْجَادُ أَهْلِ الإسلام —</h3>
-            <div class="axis-points">
-                <p>① استقراءٌ سننيٌّ لأمجاد الأمة انطلاقاً من السيرة النبوية إلى رجال البطولة.</p>
-                <p>② توثيقٌ علمي لإشراقات الدول الإسلامية المتعاقبة والإنجازات الحضارية الخالدة.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
-        </div>
+  <footer class="footer">
+    <div class="footer-quran">
+      ﴿ سَنُرِيهِمْ آيَاتِنَا فِي الْآفَاقِ وَفِي أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ الْحَقُّ ﴾
+      <br><small style="font-size: 0.9rem; color: var(--txt-dim);">— سورة فصلت: ٥٣</small>
+    </div>
 
-        <div class="axis-card axis-theme-1">
-            <h3 class="axis-title">المحور التاسع: — صَفَحَاتٌ مِنْ عُلَمَاءِ الأُمَّةِ —</h3>
-            <div class="axis-points">
-                <p>① استحضارٌ ملهمٌ لمواقف وحياة الأعلام من جهابذة الفكر الإسلامي والشرع.</p>
-                <p>② تحليلٌ منهجي للمسارات الفكرية للعلماء وإسهاماتهم الحضارية عبر التاريخ الإسلامي.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
-        </div>
+    <div class="social-links">
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    </div>
 
-        <!-- البوابة السادسة -->
-        <h2 class="portal-header">⚡ سادساً — البَوَّابَةُ السَّادِسَةُ: بِالإسلامِ نَحْيَا كِرَاماً.</h2>
-        <div class="portal-subtitle">نَهْضَةُ الجِيلِ وَالتَّعَافِي النَّفْسَانِي.</div>
-
-        <div class="axis-card axis-theme-6">
-            <h3 class="axis-title">المحور الخامس عشر: — الـمَعَالِي لِلْجِيلِ الصَّاعِدِ —</h3>
-            <div class="axis-points">
-                <p>① سيكولوجيةٌ متكاملة للانضباط والارتقاء تصنع قوة الإرادة لدى الشباب القرآني.</p>
-                <p>② منهجيةٌ تأصيلية تؤهل الجيل لقيادة الاستخلاف والنجاح الشخصي والمهني.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
-        </div>
-
-        <div class="axis-card axis-theme-2">
-            <h3 class="axis-title">المحور السادس عشر: — السَّلَامُ لِقَلْبِكَ يَا صَاحِبِي —</h3>
-            <div class="axis-points">
-                <p>① علاج نفساني لترميم أوجاع القلق الوجودي والتعافي من الإدمان الرقمي.</p>
-                <p>② جرعات شرعية للاستشفاء الروحي لتحقيق الوعي النفسي-الإيماني.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
-        </div>
-
-        <!-- البوابة السابعة -->
-        <h2 class="portal-header">🌸 سابعاً — البَوَّابَةُ السَّابِعَةُ: مِعْمَارُ الأُسْرَةِ الـمُسْلِمَةِ.</h2>
-        <div class="portal-subtitle">الـمَرْأَةُ وَالتَّزْكِيَةُ الرُّوحَانِيَّةُ.</div>
-
-        <div class="axis-card axis-theme-2">
-            <h3 class="axis-title">المحور الثالث عشر: — أَنْتِ أَيْضاً صَحَابِيَّةٌ —</h3>
-            <div class="axis-points">
-                <p>① تأصيلٌ لكرامة المرأة وهويتها الحرة في ظلال الإسلام بعيداً عن التبعية الغربية.</p>
-                <p>② تفكيكٌ صارم للمركزية النسوية الغربية لتأمين فطرة الأسرة المسلمة والنشء.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
-        </div>
-
-        <div class="axis-card axis-theme-4">
-            <h3 class="axis-title">المحور الرابع عشر: — عِفَّةُ الرِّجَالِ النُّبَلَاءِ —</h3>
-            <div class="axis-points">
-                <p>① تَوعِيَةُ شَبَابِ الجِيلِ الصَّاعِدِ بِأَضرَارِ مُشَاهَدَةِ الأَفلَامِ الإِبَاحِيَّةِ وَطُرُقِ التَّعَافِي بِأَسَالِيبَ طِبِّيَّةٍ وَنَفسَانِيَّةٍ حَدِيثَةٍ مُتَوَافِقَةٍ مَعَ تَعَالِيمِ وَضَوَابِطِ الإِسلَامِ الحَنِيفِ.</p>
-                <p>② بناءٌ للحصانة الأخلاقية وعوامل الثبات أمام الفتن الرقمية والإدمانية المعاصرة.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
-        </div>
-
-        <!-- البوابة الثامنة -->
-        <h2 class="portal-header">📚 ثامناً — البَوَّابَةُ الثَّامِنَةُ: مَنَصَّةُ الـمَعْرِفَةِ.</h2>
-        <div class="portal-subtitle">التَّأْصِيلُ وَالبَحْثُ الرَّقْمِيُّ.</div>
-
-        <div class="axis-card axis-theme-1">
-            <h3 class="axis-title">المحور التاسع عشر: — مَدَاخِلُ إِلَى العُلُومِ الإسلامِيَّةِ —</h3>
-            <div class="axis-points">
-                <p>① معالمُ تأصيلية وخرائط قراءة رصينة ترقى بالشباب في سماوات طلب العلوم الشرعية.</p>
-                <p>② مساراتٌ منهجية تخصصية لتحصيل العلوم الإسلامية على منهج أهل السنة والجماعة.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
-        </div>
-
-        <div class="axis-card axis-theme-3">
-            <h3 class="axis-title">المحور العشرون: — خَزَانَةُ الـمُثَقَّفِ الـمُعَاصِرِ —</h3>
-            <div class="axis-points">
-                <p>① رصد متجدد لروائع كتب الفكر الإسلامي الحديثة التي توافق حقائق الوحي الإلهي.</p>
-            </div>
-            <div class="content-types">
-                <button class="type-btn">📄 مقالات وأبحاث</button>
-                <button class="type-btn">📚 كتب ورسائل جامعية</button>
-                <button class="type-btn">🎥 مرئيات</button>
-            </div>
-        </div>
-
-        <!-- الآية القرآنية -->
-        <div class="quran-verse">
-            ﴿ سَنُرِيهِمْ آيَاتِنَا فِي الْآفَاقِ وَفِي أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ الْحَقُّ ﴾
-            <div style="font-size: 1rem; color: var(--sky-blue); margin-top: 10px;">— سورة فصلت: ٥٣</div>
-        </div>
-
-    </main>
-
-    <!-- 5. تذييل الموقع (Footer) -->
-    <footer class="site-footer">
-        <div class="social-links">
-            <a href="#">YouTube</a>
-            <a href="#">TikTok</a>
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-        </div>
-
-        <div class="contact-info">
-            📞 Tél: 0656 27 91 94 &nbsp;|&nbsp; ✉️ profremadnaabdelaziz@gmail.com
-        </div>
-
-        <div class="copyright">
-            مِعْمَارُ الوَحْيِ — MIMAR AL-WAHY &copy; | الأُسْتَاذُ رَمَاضْنَة عَبْدُ الْعَزِيزِ — دِرَاسَاتٌ إِسْلَامِيَّةٌ عُلْيَا.
-        </div>
-    </footer>
+    <div class="contact-info">
+      <p>الهاتف: 0656 27 91 94 | البريد: profremadnaabdelaziz@gmail.com</p>
+      <p style="margin-top: 5px; color: var(--gold);">مِعْمَارُ الوَحْيِ — MIMAR AL-WAHY © جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
 
 </body>
 </html>
