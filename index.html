@@ -102,18 +102,21 @@ body{
   margin-top: 10px;
 }
 
+/* تنسيق الخانات الثلاث في الوسط متوازية */
 .features-list {
   list-style: none;
-  max-width: 800px;
-  margin: 20px auto 0 auto;
-  text-align: right;
+  max-width: 850px;
+  margin: 25px auto 0 auto;
+  text-align: center;
   padding: 0 15px;
 }
 
 .features-list li {
   color: var(--txt);
-  font-size: 1.15rem;
-  margin-bottom: 8px;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  line-height: 1.8;
 }
 
 /* CONTAINER & LAYOUT */
@@ -273,13 +276,10 @@ footer {
 <body>
 
 <header class="header">
-  <!-- الصورة الشخصية كاملة في الأعلى -->
   <img src="792158587_1617244456733501_6773187091357315254_n.jpg" alt="الأستاذ الباحث رمضنة عبد العزيز" class="top-banner-img">
 
-  <!-- الشعار (اللوغو) أسفل الصورة في المنتصف -->
   <img src="صورة 02_2.jfif" alt="شعار معمار الوحي" class="logo-img">
 
-  <!-- النص الأساسي المعتمد -->
   <h1 class="site-title">( مِعْمَارُ الوَحْيِ )</h1>
   <div class="site-subtitle-en">MIMAR AL-WAHY</div>
   
@@ -290,6 +290,7 @@ footer {
     مَنَصَّةٌ إِسْلَامِيَّةٌ فِكْرِيَّةٌ لِتَعْزِيزِ الْيَقِينِ بِثَوَابِت الإِسْلَامِيِّ.
   </div>
 
+  <!-- النقاط الثلاث في الوسط وتحت العبارة مباشرة -->
   <ul class="features-list">
     <li>① نَقْدٌ مَنْهَجِيٌّ صَارِمٌ وَإِجَابَاتٌ عِلْمِيَّةٌ مُوَثَّقَةٌ لِلشُّبُهَاتِ الْمُثَارَةِ.</li>
     <li>② رَوَائِعُ الْفِيدْيُوهَاتِ وَالْكُتُبِ وَالأَبْحَاثِ الْجَامِعِيَّةِ وَالْمَقَالاتِ الْفِكْرِيَّةِ.</li>
@@ -299,7 +300,6 @@ footer {
 
 <main class="container">
 
-  <!-- خانة البحث الرقمي -->
   <section class="search-card">
     <div style="font-size:1.3rem; font-weight:700; color:var(--gold2);">مَعَارِجُ الْبَحْثِ الرَّقْمِيِّ — ابحث في المحاور والمواد...</div>
     <div class="search-box">
@@ -310,7 +310,6 @@ footer {
 
   <h2 class="section-title">— الـمِعْمَارُ الـمَعْرِفِيُّ لِلْمَنَصَّةِ —<br>خَرِيطَةُ الْبَوَّابَاتِ وَالْمَحَاوِرِ</h2>
 
-  <!-- البوابة الأولى -->
   <div class="portal-title">🔵 أوَّلاً — البَوَّابَةُ الأُولَى: العُرْوَةُ الوُثْقَى.</div>
   <div class="portal-subtitle">النَّصُّ وَالـمَصْدَرُ الـمَعْصُومُ.</div>
 
@@ -353,7 +352,6 @@ footer {
     </div>
   </div>
 
-  <!-- البوابة الثانية -->
   <div class="portal-title">🔴 ثانياً — البَوَّابَةُ الثَّانِيَةُ: تَهَافُتُ الفَلَاسِفَةِ.</div>
   <div class="portal-subtitle">الـمُوَاجَهَةُ الفِكْرِيَّةُ النَّقْدِيَّةُ.</div>
 
@@ -396,7 +394,6 @@ footer {
     </div>
   </div>
 
-  <!-- البوابة الثالثة -->
   <div class="portal-title">🧠 ثالثاً — البَوَّابَةُ الثَّالِثَةُ: الإنسانُ يَبْحَثُ عَنِ الـمَعْنَى.</div>
   <div class="portal-subtitle">التَّشْرِيحُ الـمَذْهَبِيُّ وَالحَصَانَةُ.</div>
 
@@ -439,7 +436,6 @@ footer {
     </div>
   </div>
 
-  <!-- البوابة الرابعة -->
   <div class="portal-title">🛣️ رابعاً — البَوَّابَةُ الرَّابِعَةُ: الصِّرَاطُ الـمُسْتَقِيمُ.</div>
   <div class="portal-subtitle">التَّشْرِيعُ وَالـمِيلَادُ الجَدِيدُ.</div>
 
@@ -469,7 +465,6 @@ footer {
     </div>
   </div>
 
-  <!-- البوابة الخامسة -->
   <div class="portal-title">📜 خامساً — البَوَّابَةُ الـخَامِسَةُ: رِجَالٌ وَحَضَارَاتٌ.</div>
   <div class="portal-subtitle">الـعُمْرَانُ وَالتَّارِيخُ السُّنَنِيُّ.</div>
 
@@ -489,7 +484,7 @@ footer {
   <div class="axis-card">
     <div class="axis-title">المحور الثامن: — أَمْجَادُ أَهْلِ الإسلام —</div>
     <div class="axis-desc">
-      ① استقراءٌ سننيٌّ لأمجاد الأمة انطلاقاً من السيرة النبوية الى رجال البطولة.<br>
+      ① استقراءٌ سننيٌّ لأمجاد الأمة انطلاقاً من السيرة النبوية الىرجال البطولة.<br>
       ② توثيقٌ علمي لإشراقات الدول الإسلامية المتعاقبة والإنجازات الحضارية الخالدة.
     </div>
     <div class="content-types">
@@ -512,7 +507,6 @@ footer {
     </div>
   </div>
 
-  <!-- البوابة السادسة -->
   <div class="portal-title">⚡ سادساً — البَوَّابَةُ السَّادِسَةُ: بِالإسلامِ نَحْيَا كِرَاماً.</div>
   <div class="portal-subtitle">نَهْضَةُ الجِيلِ وَالتَّعَافِي النَّفْسَانِي.</div>
 
@@ -542,7 +536,6 @@ footer {
     </div>
   </div>
 
-  <!-- البوابة السابعة -->
   <div class="portal-title">🌸 سابعاً — البَوَّابَةُ السَّابِعَةُ: مِعْمَارُ الأُسْرَةِ الـمُسْلِمَةِ.</div>
   <div class="portal-subtitle">الـمَرْأَةُ وَالتَّزْكِيَةُ الرُّوحَانِيَّةُ.</div>
 
@@ -572,7 +565,6 @@ footer {
     </div>
   </div>
 
-  <!-- البوابة الثامنة -->
   <div class="portal-title">📚 ثامناً — البَوَّابَةُ الثَّامِنَةُ: مَنَصَّةُ الـمَعْرِفَةِ.</div>
   <div class="portal-subtitle">التَّأْصِيلُ وَالبَحْثُ الرَّقْمِيُّ.</div>
 
@@ -601,13 +593,11 @@ footer {
     </div>
   </div>
 
-  <!-- الآية الكريمة -->
   <div class="quran-verse">
     ﴿ سَنُرِيهِمْ آيَاتِنَا فِي الْآفَاقِ وَفِي أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ الْحَقُّ ﴾<br>
     <span style="font-size:1.1rem; color:var(--silv);">— سورة فصلت: ٥٣</span>
   </div>
 
-  <!-- وسائل التواصل والمعلومات -->
   <section class="social-section">
     <div class="social-links">
       <a href="#" class="social-btn">YouTube</a>
